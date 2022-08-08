@@ -1,38 +1,122 @@
-.App {
+.topheader {
+  padding: 20px;
+  background-color: #ddd;
+}
+
+nav {
+  background-color: #eee;
+  padding: 10px;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  list-style-type: none;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  padding: 20px;
+  background-color: rgb(72 72 100);
+  display: block;
+  color: #fff;
+  min-width: 70px;
+  text-align: center;
+  border-radius: 5px;
+}
+nav ul li a.active {
+  background-color: #000;
+}
+
+.itemsBlock {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.itemsBlock > div {
+  padding: 20px;
+  border: 1px solid #ccc;
+  width: 300px;
+  margin: 20px;
+  background-color: #eeeeee;
+}
+.buttonRow {
+  display: flex;
+  justify-content: space-between;
+}
+.buttonRow .like {
+  border: 1px solid #626161;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 2px;
+  align-items: revert;
+  cursor: pointer;
+}
+.buttonRow .like:hover {
+  background-color: #ddd;
+}
+
+.btns button {
+  padding: 5px 10px;
+  font-size: 20px;
+  width: 40px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.buttonRow .like.active {
+  background-color: #605e5e;
+  color: #fff;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.items {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.items.header {
+  padding: 10px;
+  box-shadow: 0 3px 5px #dddddd;
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.items > div {
+  width: 200px;
+  padding: 10px;
+}
+
+.items > div.itemQuantity, .items > div.totalPrice,.items > div.itemRemove {
+  width:90px
+}
+
+div.red{
+  background: red;
+  transition: 0.3s all;
+}
+
+.cartouter {
+  display: flex;
+}
+.cartblock {
+  width: 75%;
+}
+
+
+.totalcart {
+  width:24%;
+  padding: 40px;
+  background-color: #ddd;
+  width: 18%;
+}
+.favourite {
+  display: inline-block;
+  padding: 30px;
+  background-color: #f6f4f4;
+  margin-right: 30px;
+  width: 300px;
+  border: 1px solid #ddd;
 }

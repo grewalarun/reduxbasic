@@ -4,10 +4,23 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+//import productsReducer from './reducers/products-reducer';
+import Reducer from './redux/Reducer'
+
+// const allReducers = combineReducers({
+//   products: productsReducer,
+//   //user:usersReducer
+// })
+const store = createStore(Reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+
+store.subscribe(()=>{
+  localStorage.setItem('local', JSON.stringify(store.getState()))
+})
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+<Provider store ={store}><App /></Provider>,
   document.getElementById('root')
 );
 
