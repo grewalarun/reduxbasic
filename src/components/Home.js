@@ -40,7 +40,7 @@ const mapDispatchToProps = (dispatch) => {
  function Home(props) {
     console.log("HOME");
     const data = props.state.state;
-    console.log(props);
+    //console.log(props);
   return (
     <>
     <h1>Home</h1>

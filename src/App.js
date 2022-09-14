@@ -4,10 +4,12 @@ import Home from "./components/Home";
 import Cart from "./components/Cart";
 import Favourite from "./components/Favourite";
 import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
-
+import {useSelector} from 'react-redux';
 // import { Container } from './styles';
 
 export default function App() {
+  const a= useSelector(props=>props.state);
+  var items = a.addedItems.length;
   return (
 <>
 <div className="topheader">Redux</div>
@@ -16,7 +18,7 @@ export default function App() {
       <ul>
         <li><NavLink exact="true"  to='/' >Home</NavLink></li>
        
-        <li><NavLink exact="true"  to={{ pathname: "/Cart" }}>Cart</NavLink></li>
+        <li><NavLink exact="true"  to={{ pathname: "/Cart" }}>Cart<sup>{items}</sup></NavLink></li>
         <li><NavLink exact="true"  to={{ pathname: "/Favourite" }}>Favourite</NavLink></li>
       </ul>
     </nav>
